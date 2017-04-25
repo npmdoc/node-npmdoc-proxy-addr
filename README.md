@@ -1,4 +1,7 @@
-# api documentation for  [proxy-addr (v1.1.4)](https://github.com/jshttp/proxy-addr#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-proxy-addr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-proxy-addr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-proxy-addr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-proxy-addr)
+# npmdoc-proxy-addr
+
+#### basic api documentation for  [proxy-addr (v1.1.4)](https://github.com/jshttp/proxy-addr#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-proxy-addr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-proxy-addr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-proxy-addr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-proxy-addr)
+
 #### Determine address of proxied request
 
 [![NPM](https://nodei.co/npm/proxy-addr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/proxy-addr)
@@ -74,7 +77,8 @@
         "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
         "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
     },
-    "version": "1.1.4"
+    "version": "1.1.4",
+    "bin": {}
 }
 ```
 
