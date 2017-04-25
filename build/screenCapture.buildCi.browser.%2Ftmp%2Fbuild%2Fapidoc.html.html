@@ -83,21 +83,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.proxy-addr.toString">
-            function <span class="apidocSignatureSpan">proxy-addr.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.proxy-addr.all">module proxy-addr.all</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.proxy-addr.all.all">
-            function <span class="apidocSignatureSpan">proxy-addr.</span>all
+            <a class="apidocElementLiA" href="#apidoc.element.proxy-addr.index">
+            function <span class="apidocSignatureSpan">proxy-addr.</span>index
             <span class="apidocSignatureSpan">(req, trust)</span>
             </a>
 
@@ -105,26 +92,31 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.proxy-addr.compile">module proxy-addr.compile</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.proxy-addr.index">module proxy-addr.index</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.proxy-addr.compile.compile">
-            function <span class="apidocSignatureSpan">proxy-addr.</span>compile
-            <span class="apidocSignatureSpan">(val)</span>
+            <a class="apidocElementLiA" href="#apidoc.element.proxy-addr.index.index">
+            function <span class="apidocSignatureSpan">proxy-addr.</span>index
+            <span class="apidocSignatureSpan">(req, trust)</span>
             </a>
 
         </li>
 
-    </ol></li>
+        <li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.proxy-addr.toString">module proxy-addr.toString</a><ol>
+            <a class="apidocElementLiA" href="#apidoc.element.proxy-addr.index.all">
+            function <span class="apidocSignatureSpan">proxy-addr.index.</span>all
+            <span class="apidocSignatureSpan">(req, trust)</span>
+            </a>
+
+        </li>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.proxy-addr.toString.toString">
-            function <span class="apidocSignatureSpan">proxy-addr.</span>toString
-            <span class="apidocSignatureSpan">()</span>
+            <a class="apidocElementLiA" href="#apidoc.element.proxy-addr.index.compile">
+            function <span class="apidocSignatureSpan">proxy-addr.index.</span>compile
+            <span class="apidocSignatureSpan">(val)</span>
             </a>
 
         </li>
@@ -269,14 +261,25 @@ var trust = proxyaddr.compile('localhost')
 
 
     <h2>
-        <a href="#apidoc.element.proxy-addr.toString" id="apidoc.element.proxy-addr.toString">
-        function <span class="apidocSignatureSpan">proxy-addr.</span>toString
-        <span class="apidocSignatureSpan">()</span>
+        <a href="#apidoc.element.proxy-addr.index" id="apidoc.element.proxy-addr.index">
+        function <span class="apidocSignatureSpan">proxy-addr.</span>index
+        <span class="apidocSignatureSpan">(req, trust)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
+    <li>description and source-code<pre class="apidocCodePre">function proxyaddr(req, trust) {
+  if (!req) {
+    throw new TypeError('req argument is required');
+  }
+
+  if (!trust) {
+    throw new TypeError('trust argument is required');
+  }
+
+  var addrs = alladdrs(req, trust);
+  var addr = addrs[addrs.length - 1];
+
+  return addr;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -285,12 +288,38 @@ var trust = proxyaddr.compile('localhost')
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.proxy-addr.all" id="apidoc.module.proxy-addr.all">module proxy-addr.all</a></h1>
+<h1><a href="#apidoc.module.proxy-addr.index" id="apidoc.module.proxy-addr.index">module proxy-addr.index</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.proxy-addr.all.all" id="apidoc.element.proxy-addr.all.all">
-        function <span class="apidocSignatureSpan">proxy-addr.</span>all
+        <a href="#apidoc.element.proxy-addr.index.index" id="apidoc.element.proxy-addr.index.index">
+        function <span class="apidocSignatureSpan">proxy-addr.</span>index
+        <span class="apidocSignatureSpan">(req, trust)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxyaddr(req, trust) {
+  if (!req) {
+    throw new TypeError('req argument is required');
+  }
+
+  if (!trust) {
+    throw new TypeError('trust argument is required');
+  }
+
+  var addrs = alladdrs(req, trust);
+  var addr = addrs[addrs.length - 1];
+
+  return addr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.proxy-addr.index.all" id="apidoc.element.proxy-addr.index.all">
+        function <span class="apidocSignatureSpan">proxy-addr.index.</span>all
         <span class="apidocSignatureSpan">(req, trust)</span>
         </a>
     </h2>
@@ -336,15 +365,10 @@ proxyaddr.all(req)
     </ul>
 
 
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.proxy-addr.compile" id="apidoc.module.proxy-addr.compile">module proxy-addr.compile</a></h1>
-
 
     <h2>
-        <a href="#apidoc.element.proxy-addr.compile.compile" id="apidoc.element.proxy-addr.compile.compile">
-        function <span class="apidocSignatureSpan">proxy-addr.</span>compile
+        <a href="#apidoc.element.proxy-addr.index.compile" id="apidoc.element.proxy-addr.index.compile">
+        function <span class="apidocSignatureSpan">proxy-addr.index.</span>compile
         <span class="apidocSignatureSpan">(val)</span>
         </a>
     </h2>
@@ -394,24 +418,6 @@ returns a function suitable for `proxyaddr(req, trust)`.
 ```js
 var trust = proxyaddr.compile('localhost')
 ...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.proxy-addr.toString" id="apidoc.module.proxy-addr.toString">module proxy-addr.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.proxy-addr.toString.toString" id="apidoc.element.proxy-addr.toString.toString">
-        function <span class="apidocSignatureSpan">proxy-addr.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
